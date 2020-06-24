@@ -45,7 +45,7 @@ class Pry
         if docmore = Pry::Docmore.explain(arg_string)
           _pry_.output.puts docmore
         else
-          ORIGINAL_SHOW_DOC.new(context).call_safely(arg_string)
+          ORIGINAL_SHOW_DOC.new(context).send(:call_safely, arg_string)
         end
       end
     end
